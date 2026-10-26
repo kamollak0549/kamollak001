@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกี่ยวกับเรา - แซ่บ โมเดิร์น</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Prompt', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between">
+    <!-- Navigation -->
+    <nav class="bg-slate-800/90 backdrop-blur-md sticky top-0 z-50 border-b border-orange-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl">🌶️</span>
+                    <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-orange-500 via-amber-400 to-red-500 bg-clip-text text-transparent">ZAAP MODERN</a>
+                </div>
+                <div class="hidden md:flex space-x-8 font-medium">
+                    <a href="index.html" class="hover:text-orange-400 transition">หน้าแรก</a>
+                    <a href="about.html" class="text-orange-500 border-b-2 border-orange-500 pb-1">เกี่ยวกับเรา</a>
+                    <a href="menu.html" class="hover:text-orange-400 transition">เมนูอาหาร</a>
+                    <a href="gallery.html" class="hover:text-orange-400 transition">บรรยากาศร้าน</a>
+                    <a href="contact.html" class="hover:text-orange-400 transition">จองโต๊ะ & ติดต่อ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="bg-slate-800 py-12 border-b border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-orange-400">เรื่องราวของเรา</h1>
+            <p class="text-slate-400 mt-2">ผสมผสานเสน่ห์อีสานพื้นบ้าน เข้ากับสไตล์โมเดิร์นระดับพรีเมียม</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="max-w-7xl mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Our Story" class="rounded-2xl shadow-2xl border border-slate-700">
+            </div>
+            <div class="space-y-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-white">ต้นกำเนิดความนัวแบบ "Zaap Modern"</h2>
+                <p class="text-slate-300 leading-relaxed">
+                    ร้าน **แซ่บ โมเดิร์น** เกิดจากความตั้งใจที่จะถ่ายทอดวัฒนธรรมอาหารอีสานที่ทรงเสน่ห์และมีเอกลักษณ์ ให้เข้ากับยุคสมัยใหม่ โดยเรายังคงยึดมั่นในรสชาติดั้งเดิม เข้มข้น นัว ถึงพริกถึงขิง
+                </p>
+                <p class="text-slate-300 leading-relaxed">
+                    เราคัดสรรวัตถุดิบชั้นเลิศ อาทิ น้ำปลาร้าต้มสุกสูตรพิเศษที่ผ่านการฆ่าเชื้อสะอาด เนื้อวากิวคุณภาพเยี่ยม และผักสดพื้นบ้านส่งตรงจากชุมชน เพื่อมอบประสบการณ์การทานอาหารอีสานที่สะอาด ปลอดภัย สะดวกสบาย ในบรรยากาศที่ตกแต่งอย่างมีรสนิยม
+                </p>
+                <div class="grid grid-cols-3 gap-4 border-t border-slate-800 pt-6">
+                    <div class="text-center">
+                        <span class="block text-3xl font-bold text-orange-400">100%</span>
+                        <span class="text-xs text-slate-400">วัตถุดิบสดใหม่</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-3xl font-bold text-orange-400">50+</span>
+                        <span class="text-xs text-slate-400">รายการเมนู</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-3xl font-bold text-orange-400">4.9★</span>
+                        <span class="text-xs text-slate-400">รีวิวลูกค้า</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
+            <p>© 2026 Zaap Modern Isan Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
