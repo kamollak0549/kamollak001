@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บรรยากาศร้าน - แซ่บอินดี้ Isan Modern Cuisine</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Prompt & Kanit -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zabb-orange': '#FF5722',
+                        'zabb-red': '#E53935',
+                        'zabb-green': '#2E7D32',
+                        'zabb-dark': '#121212',
+                        'zabb-card': '#1E1E1E',
+                        'zabb-gold': '#FFD700'
+                    },
+                    fontFamily: {
+                        prompt: ['Prompt', 'sans-serif'],
+                        kanit: ['Kanit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #121212;
+            color: #E0E0E0;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #FF5722 0%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-glass {
+            background: rgba(30, 30, 30, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(255, 87, 34, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-zabb-dark text-gray-100 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-glass border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-zabb-orange to-zabb-gold rounded-full flex items-center justify-center text-black font-black text-2xl shadow-lg">
+                        🌶️
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black text-gradient font-kanit tracking-wide">แซ่บอินดี้</span>
+                        <span class="block text-xs text-zabb-orange tracking-widest font-light">ISAN MODERN CUISINE</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center font-medium">
+                    <a href="index.html" class="hover:text-zabb-orange transition-colors duration-200 text-gray-300">หน้าแรก</a>
+                    <a href="menu.html" class="hover:text-zabb-orange transition-colors duration-200 text-gray-300">เมนูอาหาร</a>
+                    <a href="gallery.html" class="hover:text-zabb-orange transition-colors duration-200 text-zabb-orange font-bold border-b-2 border-zabb-orange pb-1">บรรยากาศร้าน</a>
+                    <a href="about.html" class="hover:text-zabb-orange transition-colors duration-200 text-gray-300">เรื่องราวของเรา</a>
+                    <a href="contact.html" class="hover:text-zabb-orange transition-colors duration-200 text-gray-300">จองโต๊ะ / ติดต่อ</a>
+                </div>
+
+                <div class="hidden md:block">
+                    <a href="contact.html" class="bg-gradient-to-r from-zabb-orange to-zabb-red hover:from-zabb-red hover:to-zabb-orange text-white font-bold py-2.5 px-6 rounded-full shadow-lg hover:shadow-orange-500/50 transition-all duration-300 transform hover:-translate-y-0.5 inline-block">
+                        <i class="fa-solid fa-calendar-check mr-2"></i>จองโต๊ะเลย
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none text-2xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-zabb-card border-b border-gray-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block px-3 py-2 rounded-md font-medium text-gray-300 hover:bg-gray-800">หน้าแรก</a>
+            <a href="menu.html" class="block px-3 py-2 rounded-md font-medium text-gray-300 hover:bg-gray-800">เมนูอาหาร</a>
+            <a href="gallery.html" class="block px-3 py-2 rounded-md font-medium bg-zabb-orange/20 text-zabb-orange font-bold">บรรยากาศร้าน</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md font-medium text-gray-300 hover:bg-gray-800">เรื่องราวของเรา</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md font-medium text-gray-300 hover:bg-gray-800">จองโต๊ะ / ติดต่อ</a>
+            <a href="contact.html" class="block w-full text-center bg-gradient-to-r from-zabb-orange to-zabb-red text-white font-bold py-3 rounded-lg shadow-md mt-4">
+                <i class="fa-solid fa-calendar-check mr-2"></i>สำรองโต๊ะออนไลน์
+            </a>
+        </div>
+    </nav>
+
+    <!-- Gallery Banner -->
+    <div class="bg-gradient-to-r from-zabb-orange/20 via-zabb-dark to-zabb-red/20 py-12 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl font-black font-kanit text-white mb-2">บรรยากาศร้านแซ่บอินดี้</h1>
+            <p class="text-gray-400">ตกแต่งสไตล์ Modern Loft ผสมผสานกลิ่นอายความอบอุ่นแบบอีสานบ้านเฮา</p>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="py-12 bg-zabb-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Image 1 -->
+                <div class="relative group overflow-hidden rounded-2xl border border-gray-800 h-72 cursor-pointer shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="บรรยากาศโซน Indoor" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-lg font-bold text-white font-kanit">โซนรับรอง Indoor แอร์เย็นฉ่ำ</h3>
+                        <p class="text-xs text-zabb-orange">ดีไซน์ไฟสว่างสลัว ให้ความรู้สึกหรูหราอบอุ่น</p>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="relative group overflow-hidden rounded-2xl border border-gray-800 h-72 cursor-pointer shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="บาร์เครื่องดื่ม" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-lg font-bold text-white font-kanit">บาร์เครื่องดื่มและโซนดนตรีสด</h3>
+                        <p class="text-xs text-zabb-orange">จิบเครื่องดื่มเย็นๆ พร้อมฟังเพลงเพราะๆ</p>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="relative group overflow-hidden rounded-2xl border border-gray-800 h-72 cursor-pointer shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=800&q=80" alt="โซน Outdoor" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-lg font-bold text-white font-kanit">โซน Outdoor สวนแนวโมเดิร์น</h3>
+                        <p class="text-xs text-zabb-orange">รับลมชิลๆ ยามเย็นกับกลุ่มเพื่อนฝูง</p>
+                    </div>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="relative group overflow-hidden rounded-2xl border border-gray-800 h-72 cursor-pointer shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80" alt="ห้องจัดเลี้ยง VIP" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-lg font-bold text-white font-kanit">ห้องจัดเลี้ยง Private VIP</h3>
+                        <p class="text-xs text-zabb-orange">รองรับงานเลี้ยง สังสรรค์ครอบครัวและองค์กร</p>
+                    </div>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="relative group overflow-hidden rounded-2xl border border-gray-800 h-72 cursor-pointer shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=80" alt="เชฟกำลังปรุงอาหาร" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-lg font-bold text-white font-kanit">ครัวเปิด Open Kitchen</h3>
+                        <p class="text-xs text-zabb-orange">เห็นขั้นตอนการปรุงสด สะอาด ใส่ใจทุกรายละเอียด</p>
+                    </div>
+                </div>
+
+                <!-- Image 6 -->
+                <div class="relative group overflow-hidden rounded-2xl border border-gray-800 h-72 cursor-pointer shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?auto=format&fit=crop&w=800&q=80" alt="มุมถ่ายรูปฮิต" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-lg font-bold text-white font-kanit">มุม Photo Spot ป้ายนีออนสุดเก๋</h3>
+                        <p class="text-xs text-zabb-orange">ถ่ายรูปเช็คอินสวยเป๊ะทุกมุม</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 mt-auto text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-2xl">🌶️</span>
+                        <span class="text-xl font-black text-gradient font-kanit">แซ่บอินดี้</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4 leading-relaxed">
+                        ยกระดับอาหารอีสานสู่อีกขั้น ด้วยวัตถุดิบพรีเมียม บรรยากาศโมเดิร์นดีไซน์ และรสชาติแท้ดั้งเดิมที่ตราตรึงใจ
+                    </p>
+                    <div class="flex space-x-4 text-gray-400">
+                        <a href="#" class="w-9 h-9 bg-gray-900 rounded-full flex items-center justify-center hover:text-zabb-orange hover:bg-gray-800 transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 bg-gray-900 rounded-full flex items-center justify-center hover:text-zabb-orange hover:bg-gray-800 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 bg-gray-900 rounded-full flex items-center justify-center hover:text-zabb-orange hover:bg-gray-800 transition-colors"><i class="fa-brands fa-line"></i></a>
+                        <a href="#" class="w-9 h-9 bg-gray-900 rounded-full flex items-center justify-center hover:text-zabb-orange hover:bg-gray-800 transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold mb-4 font-kanit text-lg border-l-4 border-zabb-orange pl-3">เมนูลัด</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-zabb-orange transition-colors">หน้าแรก</a></li>
+                        <li><a href="menu.html" class="hover:text-zabb-orange transition-colors">รายการอาหาร</a></li>
+                        <li><a href="gallery.html" class="hover:text-zabb-orange transition-colors">บรรยากาศภายในร้าน</a></li>
+                        <li><a href="about.html" class="hover:text-zabb-orange transition-colors">เรื่องราวของเรา</a></li>
+                        <li><a href="contact.html" class="hover:text-zabb-orange transition-colors">จองโต๊ะออนไลน์</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold mb-4 font-kanit text-lg border-l-4 border-zabb-orange pl-3">เวลาเปิด-ปิด</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex justify-between"><span class="text-gray-400">จันทร์ - ศุกร์:</span> <span class="text-white font-medium">11:00 - 23:00 น.</span></li>
+                        <li class="flex justify-between"><span class="text-gray-400">เสาร์ - อาทิตย์:</span> <span class="text-white font-medium">10:30 - 00:00 น.</span></li>
+                        <li class="mt-2 text-xs text-zabb-orange">*เปิดบริการทุกวัน ไม่มีวันหยุดนักขัตฤกษ์</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold mb-4 font-kanit text-lg border-l-4 border-zabb-orange pl-3">ติดต่อเรา</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-location-dot text-zabb-orange mt-1"></i>
+                            <span>123/45 ถนนสุขุมวิท แขวงคลองเตย เขตคลองเตย กรุงเทพมหานคร 10110</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-phone text-zabb-orange"></i>
+                            <span>081-234-5678, 02-999-8888</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-envelope text-zabb-orange"></i>
+                            <span>contact@zabbindy.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-900 pt-6 text-center text-xs text-gray-500">
+                <p>&copy; 2026 แซ่บอินดี้ (Zabb Indy Isan Modern Cuisine). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
